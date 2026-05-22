@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Nopak Projects | Backyard Swimming Pool Makeover Preview</title>
+
+<meta name="description" content="Upload your backyard photo and see how your dream swimming pool could transform your property. Get a professional visual makeover preview from Nopak Projects." />
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+    --primary:#0c4a6e;
+    --secondary:#0ea5e9;
+    --dark:#07131f;
+    --light:#f8fbff;
+    --gold:#d4af37;
+    --text:#d9e7f2;
+    --white:#ffffff;
+    --shadow:0 15px 45px rgba(0,0,0,0.25);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--dark);
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(rgba(2,8,20,0.82), rgba(2,8,20,0.9)),
+    url('https://images.unsplash.com/photo-1560185007-cde436f6a4d0?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+}
+
+.hero::before{
+    content:'';
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:rgba(14,165,233,0.15);
+    filter:blur(100px);
+    top:-150px;
+    right:-150px;
+    border-radius:50%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    max-width:720px;
+}
+
+.badge{
+    display:inline-block;
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.12);
+    padding:12px 22px;
+    border-radius:50px;
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:28px;
+    backdrop-filter:blur(8px);
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:clamp(3rem,7vw,5.8rem);
+    line-height:1.05;
+    margin-bottom:24px;
+    font-weight:700;
+}
+
+.hero h1 span{
+    color:var(--secondary);
+}
+
+.hero p{
+    font-size:1.15rem;
+    line-height:1.8;
+    color:var(--text);
+    margin-bottom:38px;
+    max-width:650px;
+}
+
+.hero-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:18px 34px;
+    border-radius:12px;
+    font-weight:700;
+    transition:0.4s ease;
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+}
+
+.btn-primary{
+    background:linear-gradient(135deg,var(--secondary),#38bdf8);
+    color:var(--white);
+    box-shadow:0 12px 30px rgba(14,165,233,0.35);
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px);
+}
+
+.btn-outline{
+    border:1px solid rgba(255,255,255,0.2);
+    color:var(--white);
+    background:rgba(255,255,255,0.05);
+}
+
+.btn-outline:hover{
+    background:rgba(255,255,255,0.12);
+}
+
+/* TRUST */
+
+.trust{
+    background:#08131d;
+    padding:32px 0;
+    border-top:1px solid rgba(255,255,255,0.05);
+    border-bottom:1px solid rgba(255,255,255,0.05);
+}
+
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.trust-card{
+    background:rgba(255,255,255,0.03);
+    padding:25px;
+    border-radius:18px;
+    text-align:center;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.trust-card h3{
+    color:var(--secondary);
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+/* SECTION */
+
+.section{
+    padding:100px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    margin-bottom:18px;
+}
+
+.section-title p{
+    color:var(--text);
+    max-width:760px;
+    margin:auto;
+    line-height:1.8;
+}
+
+/* BEFORE AFTER */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#0b1724;
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:28px;
+}
+
+.card-content h3{
+    margin-bottom:15px;
+    font-size:1.4rem;
+}
+
+.card-content p{
+    color:var(--text);
+    line-height:1.7;
+}
+
+/* FORM */
+
+.form-section{
+    background:
+    linear-gradient(rgba(5,12,20,0.92), rgba(5,12,20,0.92)),
+    url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1400&auto=format&fit=crop') center/cover no-repeat;
+}
+
+.form-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.form-left h2{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    margin-bottom:24px;
+}
+
+.form-left p{
+    color:var(--text);
+    line-height:1.9;
+    margin-bottom:30px;
+}
+
+.benefits{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.benefit{
+    display:flex;
+    gap:16px;
+    align-items:flex-start;
+}
+
+.benefit-icon{
+    min-width:50px;
+    height:50px;
+    border-radius:50%;
+    background:rgba(14,165,233,0.15);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:20px;
+}
+
+.form-box{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    padding:45px;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,0.08);
+    box-shadow:var(--shadow);
+}
+
+.form-box h3{
+    margin-bottom:30px;
+    font-size:2rem;
+}
+
+.form-group{
+    margin-bottom:22px;
+}
+
+.form-group label{
+    display:block;
+    margin-bottom:10px;
+    font-weight:600;
+}
+
+.form-group input,
+.form-group textarea{
+    width:100%;
+    padding:18px;
+    border-radius:12px;
+    border:none;
+    background:rgba(255,255,255,0.08);
+    color:var(--white);
+    font-size:1rem;
+    outline:none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder{
+    color:#b8c6d2;
+}
+
+.upload-box{
+    border:2px dashed rgba(255,255,255,0.2);
+    padding:35px;
+    text-align:center;
+    border-radius:16px;
+    background:rgba(255,255,255,0.03);
+}
+
+.upload-box input{
+    margin-top:18px;
+}
+
+.submit-btn{
+    width:100%;
+    padding:20px;
+    border:none;
+    border-radius:14px;
+    background:linear-gradient(135deg,var(--secondary),#38bdf8);
+    color:white;
+    font-size:1rem;
+    font-weight:700;
+    cursor:pointer;
+    transition:0.4s ease;
+    box-shadow:0 12px 30px rgba(14,165,233,0.35);
+}
+
+.submit-btn:hover{
+    transform:translateY(-4px);
+}
+
+/* TESTIMONIALS */
+
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.testimonial{
+    background:#0b1724;
+    padding:35px;
+    border-radius:24px;
+    border:1px solid rgba(255,255,255,0.05);
+}
+
+.testimonial p{
+    color:var(--text);
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.client{
+    font-weight:700;
+}
+
+/* CTA */
+
+.cta{
+    padding:100px 0;
+    text-align:center;
+    background:linear-gradient(135deg,#0b1724,#0f2940);
+}
+
+.cta h2{
+    font-family:'Playfair Display',serif;
+    font-size:3.5rem;
+    margin-bottom:22px;
+}
+
+.cta p{
+    max-width:760px;
+    margin:auto;
+    color:var(--text);
+    line-height:1.8;
+    margin-bottom:35px;
+}
+
+/* FOOTER */
+
+footer{
+    background:#040b12;
+    padding:35px 0;
+    text-align:center;
+    color:#9db0c2;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:980px){
+
+    .form-wrapper{
+        grid-template-columns:1fr;
+    }
+
+    .hero{
+        text-align:center;
+    }
+
+    .hero-content{
+        margin:auto;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:3.5rem;
+    }
+
+    .section-title h2,
+    .form-left h2,
+    .cta h2{
+        font-size:2.5rem;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero h1{
+        font-size:2.8rem;
+    }
+
+    .btn{
+        width:100%;
+        justify-content:center;
+    }
+
+    .form-box{
+        padding:30px;
+    }
+
+    .section{
+        padding:70px 0;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="badge">
+🏊 Premium Backyard Swimming Pool Transformations
+</div>
+
+<h1>
+See Your Backyard With A <span>Luxury Swimming Pool</span> Before Construction Starts
+</h1>
+
+<p>
+Upload a photo of your backyard and receive a professional swimming pool makeover preview from Nopak Projects. Discover how your outdoor space could look transformed into a modern luxury entertainment area.
+</p>
+
+<div class="hero-buttons">
+<a href="#upload" class="btn btn-primary">Upload My Backyard Photo</a>
+<a href="#gallery" class="btn btn-outline">View Makeovers</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+
+<div class="container">
+
+<div class="trust-grid">
+
+<div class="trust-card">
+<h3>100+</h3>
+<p>Luxury Outdoor Concepts Designed</p>
+</div>
+
+<div class="trust-card">
+<h3>Fast</h3>
+<p>Professional Visual Feedback Process</p>
+</div>
+
+<div class="trust-card">
+<h3>Premium</h3>
+<p>Modern & Elegant Pool Concepts</p>
+</div>
+
+<div class="trust-card">
+<h3>Trusted</h3>
+<p>Authority Styling & Design Experience</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+<section class="section" id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Imagine The Transformation</h2>
+
+<p>
+Your backyard could become a premium lifestyle space designed for relaxation, entertainment, family moments and luxury living.
+</p>
+</div>
+
+<div class="gallery">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?q=80&w=1200&auto=format&fit=crop" alt="Luxury Pool"/>
+
+<div class="card-content">
+<h3>Modern Luxury Pool Design</h3>
+<p>
+Elegant clean finishes with premium lighting, stylish tiling and a modern outdoor experience.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop" alt="Pool Makeover"/>
+
+<div class="card-content">
+<h3>Complete Backyard Upgrade</h3>
+<p>
+Transform unused outdoor space into a beautiful high-value entertainment environment.
+</p>
+</div>
+
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?q=80&w=1200&auto=format&fit=crop" alt="Swimming Pool"/>
+
+<div class="card-content">
+<h3>Resort Style Experience</h3>
+<p>
+Create a luxurious atmosphere that makes your home feel like a private resort.
+</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FORM -->
+<section class="section form-section" id="upload">
+
+<div class="container">
+
+<div class="form-wrapper">
+
+<div class="form-left">
+
+<h2>
+Upload Your Backyard & Receive A Custom Pool Makeover Preview
+</h2>
+
+<p>
+Our team will review your backyard photo and create a visual concept showing how your property could look with a professionally designed swimming pool.
+</p>
+
+<div class="benefits">
+
+<div class="benefit">
+<div class="benefit-icon">✔</div>
+<div>
+<h4>Professional Concept Design</h4>
+<p>Luxury visual transformation concepts for your property.</p>
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">✔</div>
+<div>
+<h4>Quick Review Process</h4>
+<p>We review your submitted photo and provide professional feedback.</p>
+</div>
+</div>
+
+<div class="benefit">
+<div class="benefit-icon">✔</div>
+<div>
+<h4>Premium Outdoor Inspiration</h4>
+<p>See possibilities before making construction decisions.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<div class="form-box">
+
+<h3>Get Your Backyard Makeover Preview</h3>
+
+<form>
+
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" placeholder="Enter your full name" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" placeholder="Enter your phone number" required>
+</div>
+
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" placeholder="Enter your email address" required>
+</div>
+
+<div class="form-group">
+<label>Your Location</label>
+<input type="text" placeholder="City / Area">
+</div>
+
+<div class="form-group">
+<label>Tell Us About Your Dream Pool</label>
+<textarea rows="5" placeholder="Describe the style or features you would like..."></textarea>
+</div>
+
+<div class="form-group">
+<label>Upload Backyard Photos</label>
+
+<div class="upload-box">
+<p>
+📸 Upload clear pictures of your backyard for the best makeover results.
+</p>
+
+<input type="file" multiple>
+</div>
+
+</div>
+
+<button type="submit" class="submit-btn">
+SUBMIT MY BACKYARD FOR REVIEW
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+
+<div class="container">
+
+<div class="section-title">
+<h2>What Homeowners Love</h2>
+<p>
+Clients love seeing the potential of their outdoor spaces before starting their projects.
+</p>
+</div>
+
+<div class="testimonials">
+
+<div class="testimonial">
+<p>
+“The visual concept completely changed how we viewed our backyard. It gave us confidence before moving forward.”
+</p>
+
+<div class="client">
+— Happy Homeowner
+</div>
+
+</div>
+
+<div class="testimonial">
+<p>
+“The transformation preview looked premium and professional. It made the decision process much easier.”
+</p>
+
+<div class="client">
+— Residential Client
+</div>
+
+</div>
+
+<div class="testimonial">
+<p>
+“We never imagined our property could look this luxurious. The concept design was beautiful.”
+</p>
+
+<div class="client">
+— Property Owner
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CTA -->
+<section class="cta">
+
+<div class="container">
+
+<h2>
+Your Dream Backyard Starts With One Photo
+</h2>
+
+<p>
+Upload your backyard today and discover how a professionally designed swimming pool could transform your property into a luxurious outdoor experience.
+</p>
+
+<a href="#upload" class="btn btn-primary">
+START MY BACKYARD MAKEOVER
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="container">
+
+<p>
+© 2026 Nopak Projects — Luxury Swimming Pool & Backyard Transformation Concepts
+</p>
+
+</div>
+
+</footer>
+
+</body>
+  </html>
